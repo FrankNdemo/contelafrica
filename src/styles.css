@@ -68,19 +68,19 @@
   --card-foreground: var(--foreground);
   --popover: oklch(0.18 0.005 60);
   --popover-foreground: var(--foreground);
-  --primary: #d6972a;
+  --primary: #ff4b00;
   --primary-foreground: #071b38;
   --secondary: oklch(0.26 0.006 60);
   --secondary-foreground: var(--foreground);
-  --accent: #d6972a;
+  --accent: #ff4b00;
   --accent-foreground: #071b38;
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: var(--foreground);
   --border: oklch(0.28 0.005 60); /* steel #2A2A2A */
   --input: oklch(0.28 0.005 60);
-  --ring: #d6972a;
+  --ring: #ff4b00;
 
-  --chart-1: #d6972a;
+  --chart-1: #ff4b00;
   --chart-2: oklch(0.66 0.012 80);
   --chart-3: oklch(0.5 0.12 50);
   --chart-4: oklch(0.4 0.008 60);
@@ -110,17 +110,17 @@
   --card-foreground: #f8f2e7;
   --popover: #071b38;
   --popover-foreground: #f8f2e7;
-  --primary: #d6972a;
+  --primary: #ff4b00;
   --primary-foreground: #071b38;
   --secondary: oklch(0.26 0.006 60);
   --secondary-foreground: #f8f2e7;
-  --accent: #d6972a;
+  --accent: #ff4b00;
   --accent-foreground: #071b38;
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: #f8f2e7;
   --border: oklch(0.28 0.005 60);
   --input: oklch(0.28 0.005 60);
-  --ring: #d6972a;
+  --ring: #ff4b00;
 }
 
 @layer base {
@@ -239,5 +239,5 @@
 
 .site-navigation a:hover,
 .site-navigation a:focus-visible {
-  color: #d6972a !important;
+  color: #ff4b00 !important;
 }

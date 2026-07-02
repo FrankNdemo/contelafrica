@@ -116,17 +116,11 @@ export const SITE_SEARCH_ENTRIES: SearchEntry[] = [
     keywords: joinText([step.step, step.title, step.body]),
   })),
   ...OFFICES.map((office) => ({
-    title: `${office.city}, ${office.country}`,
-    eyebrow: office.role,
+    title: office.address,
+    eyebrow: "Location",
     description: office.address,
     href: "/presence",
-    keywords: joinText([
-      office.city,
-      office.country,
-      office.address,
-      office.role,
-      "office location presence",
-    ]),
+    keywords: joinText([office.address, "office location presence"]),
   })),
 ];
 

@@ -97,8 +97,8 @@ function Quote() {
 
   return (
     <>
-      <section className="px-2 pb-2">
-        <div className="relative min-h-[420px] overflow-hidden rounded-[8px] md:min-h-[560px]">
+      <section className="md:px-2 md:pb-2">
+        <div className="relative min-h-[88svh] overflow-hidden md:min-h-[560px] md:rounded-[8px]">
           <img
             src={quoteHero}
             alt="African engineers reviewing project plans"
@@ -107,8 +107,8 @@ function Quote() {
             loading="eager"
           />
           <div className="absolute inset-0 bg-[#071b38]/62" />
-          <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center px-5 text-center text-white md:min-h-[560px]">
-            <span className="text-sm font-semibold text-[#d6972a]">Contel Africa</span>
+          <div className="relative z-10 flex min-h-[88svh] flex-col items-center justify-center px-5 text-center text-white md:min-h-[560px]">
+            <span className="text-sm font-semibold text-[#ff4b00]">Contel Africa</span>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-8xl">
               Request a Quote
             </h1>
@@ -208,7 +208,7 @@ function Quote() {
               <div className="relative overflow-hidden">
                 <iframe
                   title="Contel Africa location on Commercial Street, Nairobi"
-                  src="https://www.google.com/maps?q=Commercial%20St%2C%20Nairobi%2C%20Kenya&output=embed"
+                  src="https://www.google.com/maps?q=Commercial%20St%2C%20Nairobi&output=embed"
                   className="h-[440px] w-full border-0 lg:h-[560px]"
                   style={{
                     WebkitMaskImage:
@@ -224,10 +224,7 @@ function Quote() {
                   <MapPin className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="font-semibold">Contel Africa - Nairobi</div>
-                  <div className="mt-1 text-sm text-muted-foreground">
-                    Commercial St, Nairobi, Kenya
-                  </div>
+                  <div className="font-semibold">Commercial St, Nairobi</div>
                 </div>
               </div>
             </aside>

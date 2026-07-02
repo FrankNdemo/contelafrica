@@ -1,6 +1,12 @@
 import { useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Globe2, Search, X } from "lucide-react";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { googleSearchLinks, searchSite } from "@/lib/search-data";
 import { cn } from "@/lib/utils";
@@ -28,7 +34,10 @@ export function SiteSearch({ open, onOpenChange }: SiteSearchProps) {
         }
       }}
     >
-      <DialogContent className="top-4 max-h-[calc(100dvh-2rem)] w-[calc(100vw-1.5rem)] max-w-3xl translate-y-0 overflow-hidden rounded-[8px] border-[#d9e4ea] bg-[#f7f7f4] p-0 text-[#071b38] shadow-2xl sm:top-12 sm:max-h-[calc(100vh-6rem)] sm:w-full sm:rounded-[8px] lg:top-[9rem] lg:max-h-[calc(100vh-9.5rem)]">
+      <DialogContent
+        showCloseButton={false}
+        className="top-4 max-h-[calc(100dvh-2rem)] w-[calc(100vw-1.5rem)] max-w-3xl translate-y-0 overflow-hidden rounded-[8px] border-[#d9e4ea] bg-[#f7f7f4] p-0 text-[#071b38] shadow-2xl sm:top-12 sm:max-h-[calc(100vh-6rem)] sm:w-full sm:rounded-[8px] lg:top-[9rem] lg:max-h-[calc(100vh-9.5rem)]"
+      >
         <DialogTitle className="sr-only">Search Contel Africa</DialogTitle>
         <DialogDescription className="sr-only">
           Search site content and find broader Contel-related Google links.
@@ -36,7 +45,7 @@ export function SiteSearch({ open, onOpenChange }: SiteSearchProps) {
 
         <div className="border-b border-[#d9e4ea] bg-white px-4 py-3 sm:px-5 sm:py-4">
           <div className="flex items-center gap-2 sm:gap-3">
-            <Search className="h-5 w-5 shrink-0 text-[#d6972a]" />
+            <Search className="h-5 w-5 shrink-0 text-[#ff4b00]" />
             <Input
               ref={inputRef}
               value={query}
@@ -54,6 +63,12 @@ export function SiteSearch({ open, onOpenChange }: SiteSearchProps) {
                 <X className="h-4 w-4" />
               </button>
             )}
+            <DialogClose
+              aria-label="Close search"
+              className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ff4b00]/35 text-[#ff4b00] transition-colors hover:bg-[#ff4b00] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff4b00]/60"
+            >
+              <X className="h-4 w-4" />
+            </DialogClose>
           </div>
         </div>
 
@@ -131,12 +146,12 @@ function SearchResultLink({
       rel={external ? "noreferrer" : undefined}
       onClick={onClick}
       className={cn(
-        "group flex items-start justify-between gap-3 border border-[#e0e8ec] bg-white p-3 text-left transition-colors hover:border-[#d6972a] sm:gap-4 sm:p-4",
+        "group flex items-start justify-between gap-3 border border-[#e0e8ec] bg-white p-3 text-left transition-colors hover:border-[#ff4b00] sm:gap-4 sm:p-4",
         external && "bg-[#eef5f6]",
       )}
     >
       <span className="min-w-0">
-        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#d6972a]">
+        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#ff4b00]">
           {eyebrow}
         </span>
         <span className="mt-1 block text-sm font-semibold leading-5 text-[#071b38] sm:text-base sm:leading-6">
@@ -147,9 +162,9 @@ function SearchResultLink({
         </span>
       </span>
       {external ? (
-        <Globe2 className="mt-1 h-4 w-4 shrink-0 text-[#526174] transition-colors group-hover:text-[#d6972a]" />
+        <Globe2 className="mt-1 h-4 w-4 shrink-0 text-[#526174] transition-colors group-hover:text-[#ff4b00]" />
       ) : (
-        <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-[#526174] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#d6972a]" />
+        <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-[#526174] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#ff4b00]" />
       )}
     </a>
   );

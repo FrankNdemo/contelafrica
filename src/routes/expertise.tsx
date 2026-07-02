@@ -94,7 +94,7 @@ function Expertise() {
           <Reveal>
             <h1 className="max-w-6xl pt-12 font-display text-[clamp(3.35rem,9vw,10rem)] leading-[0.84] font-light tracking-[-0.05em] text-balance md:pt-16">
               Complexity,
-              <span className="block pl-[4vw] italic text-[#d6972a] sm:pl-[8vw]">
+              <span className="block pl-[4vw] italic text-[#ff4b00] sm:pl-[8vw]">
                 made buildable.
               </span>
             </h1>
@@ -122,7 +122,7 @@ function Expertise() {
           <div className="grid gap-12 lg:grid-cols-[0.62fr_1.38fr] 2xl:gap-20">
             <Reveal>
               <div className="lg:sticky lg:top-32">
-                <span className="text-xs font-semibold tracking-[0.2em] text-[#a66c0b] uppercase">
+                <span className="text-xs font-semibold tracking-[0.2em] text-[#ff4b00] uppercase">
                   Why Contel
                 </span>
                 <h2 className="mt-6 max-w-lg font-display text-4xl leading-none font-light sm:text-5xl md:text-6xl 2xl:text-7xl">
@@ -140,7 +140,7 @@ function Expertise() {
                   ].map((stat) => (
                     <div
                       key={stat.label}
-                      className="grid h-20 w-20 place-items-center rounded-full border border-[#071b38]/40 text-center transition-colors hover:border-[#d6972a] hover:bg-[#d6972a] sm:h-24 sm:w-24"
+                      className="grid h-20 w-20 place-items-center rounded-full border border-[#071b38]/40 text-center transition-colors hover:border-[#ff4b00] hover:bg-[#ff4b00] sm:h-24 sm:w-24"
                     >
                       <span className="text-xs font-semibold leading-tight">
                         <span className="font-display text-2xl">
@@ -159,7 +159,7 @@ function Expertise() {
               {WHY_CONTEL.map((item, index) => (
                 <Reveal key={item.number} delay={(index % 2) * 0.04}>
                   <article className="group grid grid-cols-[3rem_1fr] items-center gap-4 border-b border-black/15 py-7 transition-colors hover:bg-white/60 sm:grid-cols-[4rem_1fr] md:grid-cols-[4rem_5.5rem_0.8fr_1.2fr] md:px-5 md:py-8 2xl:grid-cols-[5rem_6.5rem_0.8fr_1.2fr] 2xl:py-10">
-                    <span className="font-mono text-xs text-[#a66c0b]">/{item.number}</span>
+                    <span className="font-mono text-xs text-[#ff4b00]">/{item.number}</span>
                     <CapabilityIcon index={index} />
                     <h3 className="col-span-2 text-xl font-semibold tracking-tight md:col-span-1 md:text-2xl 2xl:text-3xl">
                       {item.title}
@@ -183,7 +183,7 @@ function Expertise() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,27,56,.82),rgba(7,27,56,.3))]" />
         <div className="mx-auto max-w-[1600px]">
           <Reveal>
-            <span className="text-xs font-semibold tracking-[0.2em] text-[#d6972a] uppercase">
+            <span className="text-xs font-semibold tracking-[0.2em] text-[#ff4b00] uppercase">
               How we deliver
             </span>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
@@ -202,8 +202,8 @@ function Expertise() {
                 key={item.step}
                 className="group relative min-h-52 border-b border-white/15 p-6 sm:min-h-60 sm:border-r lg:min-h-72 lg:p-8 2xl:min-h-80 2xl:p-10"
               >
-                <span className="font-mono text-xs text-[#d6972a]">{item.step}</span>
-                <div className="absolute right-6 top-6 h-2 w-2 rounded-full bg-white/20 transition-all group-hover:scale-[2.5] group-hover:bg-[#d6972a] lg:right-8 lg:top-8" />
+                <span className="font-mono text-xs text-[#ff4b00]">{item.step}</span>
+                <div className="absolute right-6 top-6 h-2 w-2 rounded-full bg-white/20 transition-all group-hover:scale-[2.5] group-hover:bg-[#ff4b00] lg:right-8 lg:top-8" />
                 <div className="mt-20 lg:mt-24">
                   <h3 className="text-2xl font-medium tracking-tight">{item.title}</h3>
                   <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50 transition-colors group-hover:text-white/75">
@@ -211,7 +211,7 @@ function Expertise() {
                   </p>
                 </div>
                 {index < PROCESS.length - 1 && (
-                  <span className="absolute -right-px top-8 z-10 hidden h-px w-8 bg-[#d6972a] lg:block" />
+                  <span className="absolute -right-px top-8 z-10 hidden h-px w-8 bg-[#ff4b00] lg:block" />
                 )}
               </article>
             ))}
@@ -219,7 +219,7 @@ function Expertise() {
         </div>
       </section>
 
-      <section className="bg-[#d6972a] px-5 py-16 text-[#071b38] sm:px-7 md:py-20 lg:px-10 lg:py-32 2xl:px-16 2xl:py-40">
+      <section className="bg-[#ff4b00] px-5 py-16 text-[#071b38] sm:px-7 md:py-20 lg:px-10 lg:py-32 2xl:px-16 2xl:py-40">
         <div className="mx-auto max-w-[1600px]">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
             <Reveal>
@@ -281,7 +281,7 @@ function Expertise() {
         <Reveal>
           <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-10 border-t border-black/15 pt-10 lg:flex-row lg:items-end lg:pt-12">
             <div>
-              <span className="text-xs font-semibold tracking-[0.2em] text-[#a66c0b] uppercase">
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#ff4b00] uppercase">
                 Have a complex brief?
               </span>
               <h2 className="mt-6 max-w-5xl font-display text-4xl leading-[0.92] font-light tracking-tight sm:text-5xl md:text-8xl 2xl:text-9xl">
@@ -293,7 +293,7 @@ function Expertise() {
               className="group inline-flex w-full shrink-0 items-center justify-between gap-5 rounded-full bg-[#071b38] py-3 pr-3 pl-6 text-sm font-medium text-white transition-transform hover:-translate-y-1 sm:w-auto"
             >
               Talk to an engineer
-              <span className="grid h-11 w-11 place-items-center rounded-full bg-[#d6972a] text-[#071b38]">
+              <span className="grid h-11 w-11 place-items-center rounded-full bg-[#ff4b00] text-[#071b38]">
                 <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </Link>
@@ -308,7 +308,7 @@ function CapabilityIcon({ index }: { index: number }) {
   const Icon = CAPABILITY_ICONS[index] ?? Blocks;
 
   return (
-    <span className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-full bg-[#071b38] text-[#d6972a] shadow-[0_12px_30px_rgba(7,27,56,.18)] transition-all duration-500 group-hover:rotate-3 group-hover:scale-105 group-hover:bg-[#d6972a] group-hover:text-[#071b38] sm:h-20 sm:w-20 2xl:h-24 2xl:w-24">
+    <span className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-full bg-[#071b38] text-[#ff4b00] shadow-[0_12px_30px_rgba(7,27,56,.18)] transition-all duration-500 group-hover:rotate-3 group-hover:scale-105 group-hover:bg-[#ff4b00] group-hover:text-[#071b38] sm:h-20 sm:w-20 2xl:h-24 2xl:w-24">
       <span className="absolute inset-2 rounded-full border border-current/20" />
       <Icon
         className="relative h-7 w-7 sm:h-8 sm:w-8 2xl:h-10 2xl:w-10"

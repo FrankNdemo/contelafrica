@@ -27,8 +27,8 @@ const cvMailto =
 function Careers() {
   return (
     <>
-      <section className="px-2 pb-2">
-        <div className="relative min-h-[580px] overflow-hidden rounded-[8px] md:min-h-[680px]">
+      <section className="md:px-2 md:pb-2">
+        <div className="relative min-h-[88svh] overflow-hidden md:min-h-[680px] md:rounded-[8px]">
           <img
             src={careersHero}
             alt="Black African engineer working on site"
@@ -39,9 +39,9 @@ function Careers() {
           <div className="absolute inset-0 bg-[#06182f]/25 lg:bg-gradient-to-l lg:from-[#06182f]/90 lg:via-[#06182f]/55 lg:to-[#06182f]/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#06182f]/60 via-transparent to-transparent" />
 
-          <div className="relative z-10 mx-auto flex min-h-[580px] max-w-[1440px] items-end px-6 pb-14 text-white md:min-h-[680px] md:px-10 md:pb-20 lg:justify-end">
+          <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-[1440px] items-end px-6 pb-14 text-white md:min-h-[680px] md:px-10 md:pb-20 lg:justify-end">
             <div className="max-w-3xl">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d6972a]">
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff4b00]">
                 Careers
               </span>
               <h1 className="mt-5 text-[clamp(4rem,9vw,8.5rem)] font-semibold leading-[0.86] tracking-[-0.06em]">

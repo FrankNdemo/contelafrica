@@ -402,7 +402,7 @@ function LuxuryBanner() {
       <div className="mx-auto grid max-w-[1280px] overflow-hidden rounded-[8px] bg-[#071b38] md:grid-cols-[1.25fr_0.85fr]">
         <div className="p-8 md:p-12 lg:p-16">
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
-            Build, Design & Elevate Spaces Tailored for Modern Luxurious Living.
+            Build, Design & Elevate Spaces Tailored for Modern Living.
           </h2>
           <Link
             to="/contact"
@@ -618,27 +618,27 @@ function ProcessRibbon() {
                 return (
                   <article
                     key={p.step}
-                    className="group relative flex h-[clamp(300px,52vh,360px)] w-[260px] shrink-0 flex-col overflow-hidden rounded-[4px] border border-[#d9d2c5] bg-[#fffdfa] p-6 shadow-[0_12px_28px_rgba(16,20,24,0.12)]"
+                    className="group relative flex h-[clamp(300px,52vh,360px)] w-[260px] shrink-0 flex-col overflow-hidden rounded-[4px] border border-[#ff4b00] bg-[#ff4b00] p-6 shadow-[0_12px_28px_rgba(16,20,24,0.12)]"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-display text-2xl text-[#bd8a32]">{p.step}.</span>
+                      <span className="font-display text-2xl text-[#071b38]">{p.step}.</span>
                       <span
                         className="relative grid h-14 w-14 place-items-center"
                         aria-hidden="true"
                       >
-                        <span className="absolute inset-1 rotate-6 border border-[#bd8a32]/20" />
+                        <span className="absolute inset-1 rotate-6 border border-[#071b38]/20" />
                         <Icon
                           className="relative h-10 w-10 text-[#26384a] transition-transform duration-300 group-hover:scale-105"
                           strokeWidth={1.25}
                         />
-                        <span className="absolute bottom-1 right-1 h-5 w-2 bg-[#d6a94f]/75" />
+                        <span className="absolute bottom-1 right-1 h-5 w-2 bg-[#071b38]/75" />
                       </span>
                     </div>
 
                     <h3 className="font-display mt-7 text-xl font-medium text-[#13243a]">
                       {p.title}
                     </h3>
-                    <span className="mt-3 h-px w-7 bg-[#bd8a32]" aria-hidden="true" />
+                    <span className="mt-3 h-px w-7 bg-[#071b38]" aria-hidden="true" />
                     <p className="mt-3 text-xs leading-5 text-[#42505d]">{p.body}</p>
                   </article>
                 );
@@ -707,7 +707,7 @@ function HomeContact() {
     <section className="relative overflow-hidden bg-[#071b38] px-5 py-20 text-white lg:px-10 md:py-28">
       <div className="mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <div className="relative z-10">
-          <span className="text-sm font-semibold text-[#d6972a]">Book Appointment</span>
+          <span className="text-sm font-semibold text-[#ff4b00]">Book Appointment</span>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">Get in Touch</h2>
           <form className="mt-10 space-y-4" onSubmit={(event) => event.preventDefault()}>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -715,20 +715,20 @@ function HomeContact() {
                 required
                 aria-label="Full name"
                 placeholder="Full Name*"
-                className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#d6972a]"
+                className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#ff4b00]"
               />
               <input
                 required
                 type="email"
                 aria-label="Email address"
                 placeholder="Email Address*"
-                className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#d6972a]"
+                className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#ff4b00]"
               />
             </div>
             <select
               aria-label="Service"
               defaultValue=""
-              className="h-12 w-full rounded-[8px] border border-white/18 bg-[#071b38] px-4 text-sm text-white/75 outline-none focus:border-[#d6972a]"
+              className="h-12 w-full rounded-[8px] border border-white/18 bg-[#071b38] px-4 text-sm text-white/75 outline-none focus:border-[#ff4b00]"
             >
               <option value="" disabled>
                 Select a service
@@ -742,11 +742,11 @@ function HomeContact() {
               aria-label="Your message"
               rows={6}
               placeholder="Your Message"
-              className="w-full resize-none rounded-[8px] border border-white/18 bg-transparent p-4 text-sm outline-none placeholder:text-white/65 focus:border-[#d6972a]"
+              className="w-full resize-none rounded-[8px] border border-white/18 bg-transparent p-4 text-sm outline-none placeholder:text-white/65 focus:border-[#ff4b00]"
             />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full border border-[#d6972a] px-7 py-3.5 text-sm font-semibold text-[#d6972a] transition-colors hover:bg-[#d6972a] hover:text-[#071b38]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#ff4b00] px-7 py-3.5 text-sm font-semibold text-[#ff4b00] transition-colors hover:bg-[#ff4b00] hover:text-[#071b38]"
             >
               Submit Message
               <ArrowUpRight className="h-4 w-4" />
@@ -761,7 +761,7 @@ function HomeContact() {
             className="absolute inset-0 h-full w-full object-contain opacity-55"
           />
           <div
-            className="absolute left-[53%] top-[55%] h-4 w-4 rounded-full border-4 border-[#d6972a]/35 bg-[#d6972a] shadow-[0_0_0_8px_rgba(214,151,42,0.16)]"
+            className="absolute left-[53%] top-[55%] h-4 w-4 rounded-full border-4 border-[#ff4b00]/35 bg-[#ff4b00] shadow-[0_0_0_8px_rgba(255,75,0,0.16)]"
             aria-hidden="true"
           />
           <div className="absolute right-0 top-[12%] w-[min(100%,330px)] rounded-[8px] bg-white p-3 text-[#1A1A1A] shadow-2xl sm:right-[2%] sm:top-[18%]">
@@ -773,12 +773,12 @@ function HomeContact() {
               />
               <div className="py-1">
                 <div className="text-xs text-[#1A1A1A]/60">Address:</div>
-                <div className="mt-1 font-semibold text-[#d6972a]">Commercial St, Nairobi</div>
+                <div className="mt-1 font-semibold text-[#ff4b00]">Commercial St, Nairobi</div>
                 <a
                   href="https://maps.google.com/?q=Commercial+St+Nairobi"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 inline-flex rounded-full bg-[#1A1A1A] px-5 py-2 text-xs font-semibold text-[#d6972a]"
+                  className="mt-4 inline-flex rounded-full bg-[#1A1A1A] px-5 py-2 text-xs font-semibold text-[#ff4b00]"
                 >
                   Direction
                 </a>

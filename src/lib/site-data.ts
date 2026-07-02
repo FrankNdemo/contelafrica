@@ -903,16 +903,16 @@ export const PROJECTS: Project[] = [
 export type LeadershipMember = { name: string; role: string; bio: string; phone?: string };
 export const LEADERSHIP: LeadershipMember[] = [
   {
+    name: "Chadwick Otachi",
+    role: "Operations Director",
+    bio: "Operations leader focused on disciplined delivery, dependable programmes and consistent project quality.",
+    phone: "0722492285",
+  },
+  {
     name: "Dr. Adaeze Okonkwo",
     role: "Group Chief Executive",
     bio: "Chartered civil engineer with 28 years across megaprojects in West and East Africa.",
     phone: "0114470441",
-  },
-  {
-    name: "Marc Verwoerd",
-    role: "Chief Operating Officer",
-    bio: "Former MD of a tier-one European contractor, now leading operational excellence across Contel's 14 markets.",
-    phone: "0768241871",
   },
   {
     name: "Linda Mboya",

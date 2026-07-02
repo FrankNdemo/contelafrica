@@ -35,7 +35,7 @@ function ServicesIndex() {
     <main className="bg-[#f7f7f4] text-[#071b38]">
       <section className="mx-auto max-w-[1180px] px-5 pb-12 pt-20 text-center lg:px-10 lg:pt-24">
         <Reveal>
-          <span className="mx-auto block h-0.5 w-16 bg-[#d6972a]" />
+          <span className="mx-auto block h-0.5 w-16 bg-[#ff4b00]" />
           <h1 className="mt-4 text-4xl font-semibold md:text-5xl">Our services</h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#526174] md:text-base">
             Integrated design, engineering and construction expertise for modern commercial,
@@ -116,7 +116,7 @@ function ServiceIcon({ service }: { service: Service }) {
 function ServiceBody({ service, onFlip }: { service: Service; onFlip?: () => void }) {
   return (
     <div className="flex min-h-[250px] flex-col px-7 pb-7 pt-16 md:px-9">
-      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d6972a]">
+      <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff4b00]">
         {service.category}
       </span>
       <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-[28px]">{service.title}</h2>
@@ -125,7 +125,7 @@ function ServiceBody({ service, onFlip }: { service: Service; onFlip?: () => voi
         <button
           type="button"
           onClick={onFlip}
-          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[#d6972a] hover:text-[#071b38]"
+          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[#ff4b00] hover:text-[#071b38]"
         >
           View service <RotateCcw className="h-4 w-4" />
         </button>
@@ -133,7 +133,7 @@ function ServiceBody({ service, onFlip }: { service: Service; onFlip?: () => voi
         <Link
           to="/services/$slug"
           params={{ slug: service.slug }}
-          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[#d6972a] hover:text-[#071b38]"
+          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[#ff4b00] hover:text-[#071b38]"
         >
           View service <ArrowUpRight className="h-4 w-4" />
         </Link>
@@ -158,7 +158,7 @@ function FlipServiceCard({
         style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
       >
         <div
-          className={`absolute inset-0 overflow-hidden border-b-2 border-[#d6972a] bg-white shadow-[0_14px_40px_rgba(7,27,56,0.08)] [backface-visibility:hidden] ${flipped ? "pointer-events-none" : ""}`}
+          className={`absolute inset-0 overflow-hidden border-b-2 border-[#ff4b00] bg-white shadow-[0_14px_40px_rgba(7,27,56,0.08)] [backface-visibility:hidden] ${flipped ? "pointer-events-none" : ""}`}
         >
           <div className="relative">
             <ServiceImage service={service} onFlip={onFlip} />
@@ -168,11 +168,11 @@ function FlipServiceCard({
         </div>
 
         <div
-          className={`no-scrollbar absolute inset-0 overflow-y-auto border-b-2 border-[#d6972a] bg-[#071b38] p-7 text-white shadow-[0_14px_40px_rgba(7,27,56,0.16)] [backface-visibility:hidden] [transform:rotateY(180deg)] md:p-9 ${flipped ? "" : "pointer-events-none"}`}
+          className={`no-scrollbar absolute inset-0 overflow-y-auto border-b-2 border-[#ff4b00] bg-[#071b38] p-7 text-white shadow-[0_14px_40px_rgba(7,27,56,0.16)] [backface-visibility:hidden] [transform:rotateY(180deg)] md:p-9 ${flipped ? "" : "pointer-events-none"}`}
         >
           <div className="flex items-start justify-between gap-5">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d6972a]">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff4b00]">
                 Services include
               </span>
               <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-[28px]">
@@ -184,7 +184,7 @@ function FlipServiceCard({
               onClick={onFlip}
               aria-label={`Return to ${service.title}`}
               title="Return to service overview"
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/35 transition-colors hover:border-[#d6972a] hover:text-[#d6972a]"
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/35 transition-colors hover:border-[#ff4b00] hover:text-[#ff4b00]"
             >
               <RotateCcw className="h-4 w-4" />
             </button>
@@ -194,7 +194,7 @@ function FlipServiceCard({
               <details key={feature.title} className="group border-b border-white/10 pb-2">
                 <summary className="flex cursor-pointer list-none items-start gap-3 py-2 text-sm leading-5 text-white/85 marker:content-none">
                   <span className="flex-1 font-medium">{feature.title}</span>
-                  <span className="text-lg leading-4 text-[#d6972a] transition-transform group-open:rotate-45">
+                  <span className="text-lg leading-4 text-[#ff4b00] transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>
@@ -205,7 +205,7 @@ function FlipServiceCard({
           <Link
             to="/contact"
             search={{ service: service.slug }}
-            className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#d6972a] hover:text-white"
+            className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#ff4b00] hover:text-white"
           >
             Request a quote <ArrowUpRight className="h-4 w-4" />
           </Link>

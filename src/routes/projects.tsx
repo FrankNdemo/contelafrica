@@ -35,8 +35,8 @@ function ProjectsIndex() {
 
   return (
     <>
-      <section className="px-2 pb-2">
-        <div className="relative min-h-[480px] overflow-hidden rounded-[8px] md:min-h-[620px]">
+      <section className="md:px-2 md:pb-2">
+        <div className="relative min-h-[480px] overflow-hidden md:min-h-[620px] md:rounded-[8px]">
           <img
             src={projectsHero}
             alt="Construction team delivering a major African building project"
@@ -48,7 +48,7 @@ function ProjectsIndex() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#071b38]/55 via-transparent to-[#071b38]/20" />
           <div className="relative z-10 flex min-h-[480px] flex-col items-center justify-center px-5 text-center text-white md:min-h-[620px]">
             <Reveal>
-              <span className="text-sm font-semibold text-[#d6972a]">Contel Africa</span>
+              <span className="text-sm font-semibold text-[#ff4b00]">Contel Africa</span>
               <h1 className="mt-5 text-6xl font-semibold tracking-tight md:text-9xl">Projects</h1>
               <span className="mt-7 inline-flex rounded-full border border-white/45 px-5 py-2.5 text-xs text-white/85">
                 Home / Projects

@@ -92,23 +92,23 @@ const SERVICE_ARTWORK = [
 ] as const;
 const TEAM_IMAGES = [
   "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?auto=format&fit=crop&w=900&q=85",
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85",
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85",
   "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=85",
 ] as const;
 const FEATURE_CARD = {
-  rest: { y: 0, borderColor: "rgba(255,255,255,0.20)", boxShadow: "0 0 0 rgba(214,151,42,0)" },
-  hover: { y: -8, borderColor: "#d6972a", boxShadow: "0 18px 42px rgba(214,151,42,0.16)" },
+  rest: { y: 0, borderColor: "rgba(255,255,255,0.20)", boxShadow: "0 0 0 rgba(255,75,0,0)" },
+  hover: { y: -8, borderColor: "#ff4b00", boxShadow: "0 18px 42px rgba(255,75,0,0.16)" },
 };
 const FEATURE_ICON = {
   rest: { scale: 1, rotate: 0, color: "#ffffff", borderColor: "rgba(255,255,255,0.15)" },
-  hover: { scale: 1.1, rotate: 4, color: "#d6972a", borderColor: "#d6972a" },
+  hover: { scale: 1.1, rotate: 4, color: "#ff4b00", borderColor: "#ff4b00" },
 };
 
 function About() {
   return (
     <>
-      <section className="px-2 pb-2">
-        <div className="relative min-h-[420px] overflow-hidden rounded-[8px] md:min-h-[560px]">
+      <section className="md:px-2 md:pb-2">
+        <div className="relative min-h-[88svh] overflow-hidden md:min-h-[560px] md:rounded-[8px]">
           <img
             src={commercial}
             alt="Contel Africa commercial interior"
@@ -117,8 +117,8 @@ function About() {
             loading="eager"
           />
           <div className="absolute inset-0 bg-[#071b38]/58" />
-          <div className="relative z-10 flex min-h-[420px] flex-col items-center justify-center px-5 text-center text-white md:min-h-[560px]">
-            <span className="text-sm font-semibold text-[#d6972a]">Contel Africa</span>
+          <div className="relative z-10 flex min-h-[88svh] flex-col items-center justify-center px-5 text-center text-white md:min-h-[560px]">
+            <span className="text-sm font-semibold text-[#ff4b00]">Contel Africa</span>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-8xl">About Us</h1>
             <span className="mt-5 rounded-full border border-white/35 px-4 py-2 text-xs">
               Home / About Us
@@ -131,7 +131,7 @@ function About() {
         <div className="mx-auto max-w-[1280px]">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-end">
             <Reveal>
-              <span className="text-xs font-semibold tracking-[0.22em] text-[#d6972a] uppercase">
+              <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
                 Our achievement
               </span>
               <h2 className="mt-4 max-w-md text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
@@ -142,7 +142,7 @@ function About() {
               {STATS.slice(0, 3).map((stat, index) => (
                 <Reveal key={stat.label} delay={index * 0.06}>
                   <div className="border-l border-[#101418]/15 pl-4">
-                    <div className="font-display text-3xl text-[#d6972a] md:text-4xl">
+                    <div className="font-display text-3xl text-[#ff4b00] md:text-4xl">
                       <Counter value={stat.value} suffix={stat.suffix} />
                     </div>
                     <div className="mt-2 text-[10px] font-semibold tracking-[0.12em] text-[#101418]/60 uppercase">
@@ -191,7 +191,7 @@ function About() {
       <section className="bg-[#1A1A1A] px-5 py-20 text-white lg:px-10 md:py-28">
         <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal>
-            <span className="text-xs font-semibold tracking-[0.22em] text-[#d6972a] uppercase">
+            <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
               Our story
             </span>
             <h2 className="mt-4 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
@@ -203,15 +203,15 @@ function About() {
               serving ambitious clients across the continent.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              <div className="border-l border-[#d6972a] pl-5">
-                <h3 className="font-semibold text-[#d6972a]">Vision</h3>
+              <div className="border-l border-[#ff4b00] pl-5">
+                <h3 className="font-semibold text-[#ff4b00]">Vision</h3>
                 <p className="mt-2 text-sm leading-6 text-white/60">
                   To be a world-class African building contractor, delivering coordinated
                   construction and engineering solutions across the continent.
                 </p>
               </div>
-              <div className="border-l border-[#d6972a] pl-5">
-                <h3 className="font-semibold text-[#d6972a]">Mission</h3>
+              <div className="border-l border-[#ff4b00] pl-5">
+                <h3 className="font-semibold text-[#ff4b00]">Mission</h3>
                 <p className="mt-2 text-sm leading-6 text-white/60">
                   To deliver solutions that meet and exceed client expectations through quality,
                   integrity and dependable timelines.
@@ -219,8 +219,8 @@ function About() {
               </div>
             </div>
             <Link
-              to="/contact"
-              className="mt-9 inline-flex items-center gap-2 rounded-full border border-[#d6972a] px-5 py-3 text-sm text-[#d6972a] hover:bg-[#d6972a] hover:text-[#071b38]"
+              to="/presence"
+              className="mt-9 inline-flex items-center gap-2 rounded-full border border-[#ff4b00] px-5 py-3 text-sm text-[#ff4b00] hover:bg-[#ff4b00] hover:text-[#071b38]"
             >
               Talk to our team <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -253,7 +253,7 @@ function About() {
         <div className="mx-auto max-w-[1280px]">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <span className="text-xs font-semibold tracking-[0.22em] text-[#d6972a] uppercase">
+              <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
                 Our team
               </span>
               <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
@@ -264,9 +264,13 @@ function About() {
               View opportunities
             </Link>
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
+          <div className="no-scrollbar -mr-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pr-[18vw] pb-4 md:mr-0 md:grid md:grid-cols-3 md:gap-7 md:overflow-visible md:pr-0">
             {LEADERSHIP.slice(0, 3).map((person, index) => (
-              <Reveal key={person.name} delay={index * 0.06}>
+              <Reveal
+                key={person.name}
+                delay={index * 0.06}
+                className="w-[78vw] max-w-[360px] shrink-0 snap-start md:w-auto md:max-w-none"
+              >
                 <article className="group relative pb-8">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] bg-white">
                     <img
@@ -279,7 +283,7 @@ function About() {
                       {[Facebook, Linkedin, Instagram].map((Icon, iconIndex) => (
                         <span
                           key={iconIndex}
-                          className="grid h-9 w-9 place-items-center rounded-full bg-white text-[#071b38] shadow-md transition-colors group-hover:bg-[#d6972a]"
+                          className="grid h-9 w-9 place-items-center rounded-full bg-white text-[#071b38] shadow-md transition-colors group-hover:bg-[#ff4b00]"
                         >
                           <Icon className="h-4 w-4" />
                         </span>
@@ -288,9 +292,10 @@ function About() {
                   </div>
                   <div className="absolute inset-x-6 bottom-0 rounded-[8px] bg-white p-6 shadow-xl shadow-black/10">
                     <h3 className="text-xl font-semibold">{person.name}</h3>
+                    <div className="mt-1 text-xs font-semibold text-[#ff4b00]">{person.role}</div>
                     <a
                       href={`tel:${person.phone}`}
-                      className="mt-1 block text-xs text-[#d6972a] hover:underline"
+                      className="mt-2 block text-xs text-[#071b38]/65 hover:text-[#ff4b00] hover:underline"
                     >
                       {person.phone}
                     </a>
@@ -305,7 +310,7 @@ function About() {
       <section className="bg-[#1A1A1A] px-5 py-20 text-white lg:px-10 md:py-28">
         <div className="mx-auto max-w-[1280px]">
           <div className="text-center">
-            <span className="text-xs font-semibold tracking-[0.22em] text-[#d6972a] uppercase">
+            <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
               Testimonials
             </span>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
@@ -327,7 +332,7 @@ function About() {
                   className="absolute inset-0 origin-bottom bg-[#5cc7bd]"
                   aria-hidden="true"
                 />
-                <motion.div variants={FEEDBACK_TEXT} className="relative z-10 text-[#d6972a]">
+                <motion.div variants={FEEDBACK_TEXT} className="relative z-10 text-[#ff4b00]">
                   ★★★★★
                 </motion.div>
                 <motion.blockquote
@@ -358,7 +363,7 @@ function About() {
       <section className="bg-[#f7f0e8] px-5 py-20 text-[#101418] lg:px-10 md:py-28">
         <div className="mx-auto grid max-w-[1280px] items-center gap-8 rounded-[8px] bg-[#071b38] p-8 text-white shadow-sm md:p-14 lg:grid-cols-[1.4fr_auto]">
           <div>
-            <span className="text-xs font-semibold tracking-[0.22em] text-[#d6972a] uppercase">
+            <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
               Partner with us
             </span>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-balance md:text-5xl">
@@ -367,7 +372,7 @@ function About() {
           </div>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#071b38] px-6 py-4 text-sm font-medium text-white hover:bg-[#d6972a] hover:text-[#071b38]"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#071b38] px-6 py-4 text-sm font-medium text-white hover:bg-[#ff4b00] hover:text-[#071b38]"
           >
             Start a project{" "}
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -392,7 +397,7 @@ function TopFeatures() {
           <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">Top Features</h2>
           <Link
             to="/services"
-            className="mt-8 inline-flex rounded-full border border-white/70 px-6 py-3 text-sm hover:border-[#d6972a] hover:text-[#d6972a]"
+            className="mt-8 inline-flex rounded-full border border-white/70 px-6 py-3 text-sm hover:border-[#ff4b00] hover:text-[#ff4b00]"
           >
             Our services
           </Link>
@@ -438,7 +443,7 @@ function ContactDetailsBand() {
         {details.map(({ label, value, icon: Icon }) => (
           <div key={label} className="flex items-center gap-5">
             <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-[#071b38]/20 bg-white/18">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#d6972a]">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#ff4b00]">
                 <Icon className="h-5 w-5" strokeWidth={2.5} />
               </span>
             </span>

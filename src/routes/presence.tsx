@@ -32,7 +32,7 @@ const CONTACT_CARDS = [
 ] as const;
 
 const fieldClass =
-  "h-13 w-full rounded-[8px] border border-[#101418]/15 bg-white px-5 text-sm text-[#101418] outline-none transition-colors placeholder:text-[#101418]/45 focus:border-[#d6972a]";
+  "h-13 w-full rounded-[8px] border border-[#101418]/15 bg-white px-5 text-sm text-[#101418] outline-none transition-colors placeholder:text-[#101418]/45 focus:border-[#ff4b00]";
 
 function ContactUs() {
   const [sending, setSending] = useState(false);
@@ -51,15 +51,15 @@ function ContactUs() {
       <section className="bg-[#f7f0e8] px-5 py-20 text-[#101418] lg:px-10 md:py-28">
         <div className="mx-auto max-w-[1320px]">
           <Reveal className="text-center">
-            <span className="text-sm font-semibold text-[#d6972a]">Contact us</span>
+            <span className="text-sm font-semibold text-[#ff4b00]">Contact us</span>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight md:text-7xl">Get in touch</h1>
           </Reveal>
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CONTACT_CARDS.map(({ title, value, icon: Icon }, index) => (
               <Reveal key={title} delay={index * 0.06}>
-                <article className="flex min-h-[220px] h-full flex-col items-center justify-center rounded-[8px] border border-[#101418]/12 bg-white px-6 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#d6972a] hover:shadow-lg hover:shadow-black/5">
-                  <span className="grid h-14 w-14 place-items-center rounded-[8px] bg-[#d6972a] text-white">
+                <article className="flex min-h-[220px] h-full flex-col items-center justify-center rounded-[8px] border border-[#101418]/12 bg-white px-6 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#ff4b00] hover:shadow-lg hover:shadow-black/5">
+                  <span className="grid h-14 w-14 place-items-center rounded-[8px] bg-[#ff4b00] text-white">
                     <Icon className="h-6 w-6" strokeWidth={2} />
                   </span>
                   <h2 className="mt-5 text-xl font-semibold">{title}</h2>
@@ -74,7 +74,7 @@ function ContactUs() {
       <section className="bg-white px-5 py-20 text-[#101418] lg:px-10 md:py-28">
         <div className="mx-auto max-w-[920px]">
           <Reveal className="text-center">
-            <span className="text-sm font-semibold text-[#d6972a]">Talk to us</span>
+            <span className="text-sm font-semibold text-[#ff4b00]">Talk to us</span>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
               Send a message anytime
             </h2>
@@ -116,12 +116,12 @@ function ContactUs() {
               aria-label="Write a message"
               rows={7}
               placeholder="Write a Message"
-              className="w-full resize-none rounded-[8px] border border-[#101418]/15 bg-white p-5 text-sm text-[#101418] outline-none transition-colors placeholder:text-[#101418]/45 focus:border-[#d6972a] sm:col-span-2"
+              className="w-full resize-none rounded-[8px] border border-[#101418]/15 bg-white p-5 text-sm text-[#101418] outline-none transition-colors placeholder:text-[#101418]/45 focus:border-[#ff4b00] sm:col-span-2"
             />
             <button
               disabled={sending}
               type="submit"
-              className="inline-flex w-max items-center gap-2 rounded-full bg-[#071b38] px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#d6972a] hover:text-[#071b38] disabled:opacity-60 sm:col-span-2"
+              className="inline-flex w-max items-center gap-2 rounded-full bg-[#071b38] px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#ff4b00] hover:text-[#071b38] disabled:opacity-60 sm:col-span-2"
             >
               {sending ? "Sending..." : "Submit Message"}
               <Send className="h-4 w-4" />
@@ -157,7 +157,7 @@ function ContactDetailsBand() {
         {details.map(({ label, value, icon: Icon }) => (
           <div key={label} className="flex items-center gap-5">
             <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-[#071b38]/20 bg-white/18">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#d6972a]">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#ff4b00]">
                 <Icon className="h-5 w-5" strokeWidth={2.5} />
               </span>
             </span>
