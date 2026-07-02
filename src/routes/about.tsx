@@ -292,7 +292,9 @@ function About() {
                   </div>
                   <div className="absolute inset-x-6 bottom-0 rounded-[8px] bg-white p-6 shadow-xl shadow-black/10">
                     <h3 className="text-xl font-semibold">{person.name}</h3>
-                    <div className="mt-1 text-xs font-semibold text-[#ff4b00]">{person.role}</div>
+                    {person.name === "Chadwick Otachi" && (
+                      <div className="mt-1 text-xs font-semibold text-[#ff4b00]">{person.role}</div>
+                    )}
                     <a
                       href={`tel:${person.phone}`}
                       className="mt-2 block text-xs text-[#071b38]/65 hover:text-[#ff4b00] hover:underline"

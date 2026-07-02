@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { appointmentWhatsAppUrl } from "@/lib/whatsapp";
 import contelLogo from "@/assets/contell-logo.png";
 import { SiteSearch } from "@/components/site/SiteSearch";
 
@@ -36,7 +37,7 @@ export function ContelLogo() {
     <img
       src={contelLogo}
       alt="Contell Africa Ltd"
-      className="-ml-4 block h-16 w-44 origin-left scale-110 object-contain sm:h-20 sm:w-56 sm:scale-[1.15] lg:-ml-9 lg:h-24 lg:w-64 lg:scale-125 lg:brightness-110 lg:saturate-110 xl:h-28 xl:w-72 xl:scale-[1.3]"
+      className="-ml-6 block h-[72px] w-48 origin-left scale-[1.14] object-contain sm:-ml-4 sm:h-20 sm:w-56 sm:scale-[1.15] lg:-ml-9 lg:h-24 lg:w-64 lg:scale-125 lg:brightness-110 lg:saturate-110 xl:h-28 xl:w-72 xl:scale-[1.3]"
     />
   );
 }
@@ -305,13 +306,15 @@ export function SiteNav() {
                           </Link>
                         ))}
                       </nav>
-                      <Link
-                        to="/contact"
+                      <a
+                        href={appointmentWhatsAppUrl()}
+                        target="_blank"
+                        rel="noreferrer"
                         onClick={closeMobileMenu}
                         className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-4 text-sm font-medium"
                       >
                         Book appointment
-                      </Link>
+                      </a>
                     </div>
                   </SheetContent>
                 </Sheet>

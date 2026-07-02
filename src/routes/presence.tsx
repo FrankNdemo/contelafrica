@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 
 import { Reveal } from "@/components/site/Motion";
+import { openSubmissionEmail } from "@/lib/mailto";
 
 export const Route = createFileRoute("/presence")({
   head: () => ({
@@ -39,11 +40,21 @@ function ContactUs() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
     setSending(true);
     await new Promise((resolve) => window.setTimeout(resolve, 500));
-    event.currentTarget.reset();
+    openSubmissionEmail("Contact message from Contel Africa website", [
+      { label: "Name", value: formData.get("name") },
+      { label: "Phone", value: formData.get("phone") },
+      { label: "Email", value: formData.get("email") },
+      { label: "Subject", value: formData.get("subject") },
+      { label: "Message", value: formData.get("message") },
+    ]);
+    form.reset();
     setSending(false);
-    toast.success("Message received. Our Nairobi team will be in touch shortly.");
+    toast.success("Opening your email app to send the message.");
   }
 
   return (

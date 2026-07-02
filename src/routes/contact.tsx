@@ -7,6 +7,7 @@ import { z } from "zod";
 
 import { Reveal } from "@/components/site/Motion";
 import { ContactBand } from "@/components/site/ContactBand";
+import { openSubmissionEmail } from "@/lib/mailto";
 import { SERVICES } from "@/lib/site-data";
 import quoteHero from "@/assets/quote-hero.jpg";
 
@@ -85,14 +86,22 @@ function Quote() {
   const selectedService = watch("service");
 
   function onSubmit(values: FormValues) {
-    return new Promise<void>((resolve) => {
-      setTimeout(() => {
-        toast.success("Thanks - a Contel specialist will respond within one working day.");
-        reset();
-        resolve();
-        console.log("quote submit", values);
-      }, 700);
-    });
+    const service =
+      values.service === "other"
+        ? values.customService
+        : SERVICES.find((item) => item.slug === values.service)?.title || values.service;
+
+    openSubmissionEmail("Quote request from Contel Africa website", [
+      { label: "Name", value: values.name },
+      { label: "Company", value: values.company },
+      { label: "Email", value: values.email },
+      { label: "Service", value: service },
+      { label: "Budget", value: values.budget },
+      { label: "Project brief", value: values.message },
+    ]);
+
+    toast.success("Opening your email app to send the request.");
+    reset();
   }
 
   return (

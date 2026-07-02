@@ -5,12 +5,7 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [
-    tanstackStart(),
-    nitro({ noExternals: true }),
-    react(),
-    tailwindcss(),
-  ],
+  plugins: [tanstackStart(), nitro({ noExternals: true }), react(), tailwindcss()],
   resolve: {
     alias: {
       tslib: "tslib/tslib.es6.mjs",

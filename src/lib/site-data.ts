@@ -10,6 +10,9 @@ import kcaaRoadImage from "@/assets/project-kcaa-road.png";
 import nockRepairsImage from "@/assets/project-nock-repairs.png";
 import electricalImage from "@/assets/project-electrical.png";
 import regionalRoadImage from "@/assets/project-regional-road.png";
+import dollarHeightsExterior from "@/assets/project-dollar-heights-exterior.jpeg";
+import dollarHeightsFront from "@/assets/project-dollar-heights-front.png";
+import dollarHeightsKitchen from "@/assets/project-dollar-heights-kitchen.jpeg";
 import interiorServiceIcon from "@/assets/about-service-interior-design.png";
 import renovationsServiceIcon from "@/assets/about-service-renovations.png";
 import constructionServiceIcon from "@/assets/about-service-construction.png";
@@ -445,8 +448,7 @@ export const SERVICES: Service[] = [
     short: "Reliable communication infrastructure for modern facilities.",
     description:
       "Sourcing and deployment of fiber optic lines, structured data cabling containment, commercial communication grids, and specialized technical routing surveys.",
-    image:
-      "https://www.icolo.io/wp-content/uploads/2023/03/Engineer-on-site-at-iColo-MPM1-scaled.jpg",
+    image: electricalImage,
     icon: electricalServiceIcon,
     category: "Telecommunications",
     features: [
@@ -624,6 +626,38 @@ export const PROJECTS: Project[] = [
       "Precast kerbs and culverts",
     ],
     gallery: [kcaaRoadImage, regionalRoadImage, infrastructure],
+    size: "wide",
+  },
+  {
+    slug: "dollar-heights-apartments-utawala",
+    title: "Dollar Heights Apartments",
+    sector: "Residential",
+    country: "Kenya",
+    city: "Utawala, Nairobi",
+    year: "Completed",
+    client: "Dollar Heights Apartments",
+    budget: "Confidential",
+    timeline: "Completed",
+    procurement: "Private residential development",
+    keyDelivery:
+      "Delivered a modern apartment block with coordinated exterior finishes, secure balconies, glazing and fitted residential interiors.",
+    scope:
+      "Multi-storey apartment construction, facade finishing, balcony metalwork, glazing, internal tiling, kitchen cabinetry and handover detailing.",
+    image: dollarHeightsExterior,
+    overview:
+      "Dollar Heights Apartments is a residential development in Utawala, Nairobi, delivered as a modern multi-storey apartment block with crisp exterior finishes and practical, well-lit interiors.",
+    challenge:
+      "The site required coordinated apartment-block delivery across exterior works, access areas, facade detailing and interior fit-out while maintaining a clean contemporary residential character.",
+    solution:
+      "Contell Africa coordinated the building shell, balcony and window detailing, exterior finish palette, interior wet-area finishes and fitted kitchen installations into one residential handover package.",
+    technologies: [
+      "Residential construction",
+      "Facade finishing",
+      "Balcony metalwork",
+      "Kitchen cabinetry",
+      "Interior tiling",
+    ],
+    gallery: [dollarHeightsExterior, dollarHeightsKitchen, dollarHeightsFront],
     size: "wide",
   },
   {
@@ -914,7 +948,7 @@ export const LEADERSHIP: LeadershipMember[] = [
     bio: "Operations leader focused on disciplined delivery, dependable programmes and consistent project quality.",
     phone: "0722492285",
     image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85",
+      "https://images-pw.pixieset.com/elementfield/odO18W9/Corporateheadshotajax-a27bbfa3-2500.jpg",
   },
   {
     name: "Dr. Adaeze Okonkwo",
@@ -1056,10 +1090,11 @@ export const TESTIMONIALS: Testimonial[] = [
     org: "Axis Holdings Plc",
   },
   {
-    quote: "The corridor opened six weeks early. That's what professional delivery looks like.",
-    name: "Hon. Diallo Ndiaye",
-    role: "Minister of Infrastructure",
-    org: "Republic of Senegal",
+    quote:
+      "The Dollar Heights apartments in Utawala were delivered with the polish, pace and accountability we needed.",
+    name: "Dollar Heights",
+    role: "Apartments",
+    org: "Utawala, Kenya",
   },
   {
     quote: "From day one their engineers behaved like part of our team. World class.",

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "@/lib/site-data";
@@ -25,6 +25,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 function ProjectsIndex() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
   const sectors = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.sector)))];
   const [sector, setSector] = useState("All");
 
@@ -32,6 +33,10 @@ function ProjectsIndex() {
     () => (sector === "All" ? PROJECTS : PROJECTS.filter((p) => p.sector === sector)),
     [sector],
   );
+
+  if (pathname.replace(/\/$/, "") !== "/projects") {
+    return <Outlet />;
+  }
 
   return (
     <>

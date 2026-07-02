@@ -1,21 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
-  Building2,
   CalendarCheck,
   ClipboardList,
   DraftingCompass,
-  Hammer,
   HardHat,
   KeyRound,
   MessagesSquare,
   PenTool,
   Play,
-  Sofa,
+  Router,
+  RouteIcon,
   Wrench,
 } from "lucide-react";
 
@@ -27,6 +26,7 @@ import residentialHome from "@/assets/project-residential.jpg";
 import engineerImage from "@/assets/about-engineer.jpg";
 import worldMapDots from "@/assets/world-map-dots.png";
 import { PROCESS, PROJECTS, TESTIMONIALS } from "@/lib/site-data";
+import { appointmentWhatsAppUrl } from "@/lib/whatsapp";
 import { Counter, Reveal } from "@/components/site/Motion";
 import { ContactBand } from "@/components/site/ContactBand";
 
@@ -183,7 +183,6 @@ function Hero() {
           <div className="relative mx-auto flex min-h-[620px] max-w-[1440px] flex-col justify-center px-5 py-16 md:min-h-[760px] md:px-10 lg:px-16">
             <Reveal delay={0.1}>
               <div className="flex items-center gap-3 text-[12px] font-medium tracking-[0.28em] text-primary uppercase">
-                <span className="inline-block h-px w-10 bg-primary" />
                 KENYAN'S TRUSTED GENERAL CONTRACTOR
               </div>
             </Reveal>
@@ -200,13 +199,15 @@ function Hero() {
             </Reveal>
             <Reveal delay={0.45}>
               <div className="mt-9 flex flex-wrap items-center gap-3">
-                <Link
-                  to="/contact"
+                <a
+                  href={appointmentWhatsAppUrl()}
+                  target="_blank"
+                  rel="noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
                 >
                   Book appointment
                   <CalendarCheck className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </Link>
+                </a>
                 <Link
                   to="/projects"
                   className="group inline-flex items-center gap-2 rounded-full border border-white/35 px-5 py-3.5 text-sm text-white hover:border-primary hover:text-primary"
@@ -228,19 +229,19 @@ function Hero() {
 function ExpertiseStrip() {
   const featured = [
     {
-      title: "Real Estate",
-      body: "Premium residential and commercial properties shaped for investment value, permanence and beauty.",
-      icon: Building2,
+      title: "Building and Construction",
+      body: "Integrated building delivery shaped by disciplined site control, procurement and durable finishes.",
+      icon: HardHat,
     },
     {
-      title: "Construction",
-      body: "High-quality build delivery with refined coordination, procurement discipline and finish control.",
-      icon: Hammer,
+      title: "ICT Infrastructure & Water Works",
+      body: "Coordinated utility works covering structured connectivity, water systems and technical installations.",
+      icon: Router,
     },
     {
-      title: "Interiors",
-      body: "Sophisticated interiors shaped by architecture, lifestyle and the rhythm of everyday living.",
-      icon: Sofa,
+      title: "Road Construction",
+      body: "Reliable road works delivered with careful setting out, materials control and practical field execution.",
+      icon: RouteIcon,
     },
   ];
 
@@ -404,13 +405,15 @@ function LuxuryBanner() {
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
             Build, Design & Elevate Spaces Tailored for Modern Living.
           </h2>
-          <Link
-            to="/contact"
+          <a
+            href={appointmentWhatsAppUrl()}
+            target="_blank"
+            rel="noreferrer"
             className="mt-9 inline-flex items-center gap-2 rounded-full border border-primary px-5 py-3 text-sm text-primary hover:bg-primary hover:text-primary-foreground"
           >
             Book appointment
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
         <img
           src={residentialHome}
@@ -453,7 +456,7 @@ function TeamPreview() {
 }
 
 function FeaturedProjects() {
-  const list = PROJECTS.slice(0, 4);
+  const list = PROJECTS.filter((project) => project.sector !== "Landscaping").slice(0, 4);
   return (
     <section className="border-y border-white/10 bg-[#1A1A1A]">
       <div className="mx-auto max-w-[1400px] px-5 lg:px-10 py-28 md:py-40">
@@ -701,16 +704,34 @@ function Testimonials() {
 }
 
 function HomeContact() {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const message = [
+      "Hello Contel Africa, I would like to book an appointment.",
+      `Name: ${String(formData.get("name") ?? "").trim()}`,
+      `Email: ${String(formData.get("email") ?? "").trim()}`,
+      `Service: ${String(formData.get("service") ?? "").trim() || "-"}`,
+      `Message: ${String(formData.get("message") ?? "").trim()}`,
+    ].join("\n");
+
+    window.location.href = appointmentWhatsAppUrl(message);
+    form.reset();
+  }
+
   return (
     <section className="relative overflow-hidden bg-[#071b38] px-5 py-20 text-white lg:px-10 md:py-28">
       <div className="mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <div className="relative z-10">
           <span className="text-sm font-semibold text-[#ff4b00]">Book Appointment</span>
           <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">Get in Touch</h2>
-          <form className="mt-10 space-y-4" onSubmit={(event) => event.preventDefault()}>
+          <form className="mt-10 space-y-4" onSubmit={handleSubmit}>
             <div className="grid gap-4 sm:grid-cols-2">
               <input
                 required
+                name="name"
                 aria-label="Full name"
                 placeholder="Full Name*"
                 className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#ff4b00]"
@@ -718,12 +739,14 @@ function HomeContact() {
               <input
                 required
                 type="email"
+                name="email"
                 aria-label="Email address"
                 placeholder="Email Address*"
                 className="h-12 rounded-[8px] border border-white/18 bg-transparent px-4 text-sm outline-none placeholder:text-white/65 focus:border-[#ff4b00]"
               />
             </div>
             <select
+              name="service"
               aria-label="Service"
               defaultValue=""
               className="h-12 w-full rounded-[8px] border border-white/18 bg-[#071b38] px-4 text-sm text-white/75 outline-none focus:border-[#ff4b00]"
@@ -737,6 +760,7 @@ function HomeContact() {
             </select>
             <textarea
               required
+              name="message"
               aria-label="Your message"
               rows={6}
               placeholder="Your Message"

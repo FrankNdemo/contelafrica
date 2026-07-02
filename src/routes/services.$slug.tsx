@@ -14,9 +14,9 @@ export const Route = createFileRoute("/services/$slug")({
     const s = SERVICES.find((x) => x.slug === params.slug);
     return {
       meta: [
-        { title: `${s?.title ?? "Service"} — Contel Africa` },
+        { title: `${s?.title ?? "Service"} - Contel Africa` },
         { name: "description", content: s?.description ?? "Contel Africa service." },
-        { property: "og:title", content: `${s?.title ?? "Service"} — Contel Africa` },
+        { property: "og:title", content: `${s?.title ?? "Service"} - Contel Africa` },
         { property: "og:description", content: s?.description ?? "Contel Africa service." },
         ...(s?.image ? [{ property: "og:image", content: s.image }] : []),
       ],
@@ -63,7 +63,7 @@ const FAQS = [
   },
   {
     q: "Do you work on design-and-build only?",
-    a: "No — we deliver under any major procurement route including traditional, construction management, and EPC.",
+    a: "No. We deliver under any major procurement route including traditional, construction management, and EPC.",
   },
   {
     q: "What's the typical project size?",
@@ -77,9 +77,11 @@ const FAQS = [
 
 function ServiceDetail() {
   const { service } = Route.useLoaderData();
-  const related = PROJECTS.filter(
-    (p) => p.sector.toLowerCase().includes(service.category.toLowerCase()) || true,
-  ).slice(0, 3);
+  const category = service.category.toLowerCase();
+  const categoryMatches = PROJECTS.filter((project) =>
+    project.sector.toLowerCase().includes(category),
+  );
+  const related = (categoryMatches.length ? categoryMatches : PROJECTS).slice(0, 3);
 
   return (
     <>
@@ -88,7 +90,7 @@ function ServiceDetail() {
           to="/services"
           className="label-eyebrow inline-flex items-center gap-2 hover:text-foreground transition-colors"
         >
-          ← All services
+          Back to all services
         </Link>
         <Reveal>
           <div className="mt-8 flex items-center gap-3">
