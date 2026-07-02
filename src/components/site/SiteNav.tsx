@@ -44,8 +44,13 @@ export function ContelLogo() {
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   const [expertiseOpen, setExpertiseOpen] = useState(false);
+  const [mobileExpertiseOpen, setMobileExpertiseOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setMobileExpertiseOpen(false);
+  };
 
   return (
     <>
@@ -194,7 +199,13 @@ export function SiteNav() {
                   <Search className="h-5 w-5" strokeWidth={1.7} />
                 </button>
 
-                <Sheet open={open} onOpenChange={setOpen}>
+                <Sheet
+                  open={open}
+                  onOpenChange={(nextOpen) => {
+                    setOpen(nextOpen);
+                    if (!nextOpen) setMobileExpertiseOpen(false);
+                  }}
+                >
                   <SheetTrigger asChild>
                     <button
                       className="grid h-12 w-12 place-items-center rounded-full border border-white/60 text-foreground transition-all duration-200 hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 lg:hidden"
@@ -212,7 +223,7 @@ export function SiteNav() {
                       <button
                         type="button"
                         onClick={() => {
-                          setOpen(false);
+                          closeMobileMenu();
                           setSearchOpen(true);
                         }}
                         className="mt-7 flex items-center justify-between border-y border-border py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:mt-8 sm:py-5 sm:text-2xl"
@@ -225,50 +236,68 @@ export function SiteNav() {
                           <Link
                             key={item.to}
                             to={item.to}
-                            onClick={() => setOpen(false)}
-                            className="group flex items-center justify-between border-b border-border py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:py-5 sm:text-2xl"
+                            onClick={closeMobileMenu}
+                            className="block border-b border-border py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:py-5 sm:text-2xl"
                           >
                             {item.label}
-                            <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#d6972a]" />
                           </Link>
                         ))}
-                        <div className="border-b border-border py-4 sm:py-5">
-                          <div className="flex items-center gap-2 font-display text-xl tracking-tight sm:text-2xl">
-                            Expertise <ChevronDown className="h-5 w-5 text-primary" />
-                          </div>
-                          <div className="mt-3 flex flex-col border-l border-primary/35 pl-4">
-                            {EXPERTISE_MENU.map((item) => (
-                              <Link
-                                key={item.to}
-                                to={item.to}
-                                onClick={() => setOpen(false)}
-                                className="flex items-center justify-between py-3 text-base font-semibold transition-colors hover:text-[#d6972a]"
-                              >
-                                {item.label}
-                                <ArrowUpRight className="h-4 w-4 text-muted-foreground" />
-                              </Link>
-                            ))}
+                        <div className="border-b border-border">
+                          <button
+                            type="button"
+                            aria-expanded={mobileExpertiseOpen}
+                            aria-controls="mobile-expertise-menu"
+                            onClick={() => setMobileExpertiseOpen((current) => !current)}
+                            className="flex w-full items-center justify-between py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:py-5 sm:text-2xl"
+                          >
+                            Expertise
+                            <ChevronDown
+                              className={cn(
+                                "h-5 w-5 text-primary transition-transform duration-200",
+                                mobileExpertiseOpen && "rotate-180",
+                              )}
+                            />
+                          </button>
+                          <div
+                            id="mobile-expertise-menu"
+                            className={cn(
+                              "grid transition-[grid-template-rows] duration-200",
+                              mobileExpertiseOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                            )}
+                          >
+                            <div className="overflow-hidden">
+                              <div className="mb-4 flex flex-col border-l border-primary/35 pl-4 sm:mb-5">
+                                {EXPERTISE_MENU.map((item) => (
+                                  <Link
+                                    key={item.to}
+                                    to={item.to}
+                                    onClick={closeMobileMenu}
+                                    className="py-3 text-base font-semibold transition-colors hover:text-[#d6972a]"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
                           </div>
                         </div>
                         {NAV.slice(4).map((item) => (
                           <Link
                             key={item.to}
                             to={item.to}
-                            onClick={() => setOpen(false)}
-                            className="group flex items-center justify-between border-b border-border py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:py-5 sm:text-2xl"
+                            onClick={closeMobileMenu}
+                            className="block border-b border-border py-4 font-display text-xl tracking-tight transition-colors hover:text-[#d6972a] sm:py-5 sm:text-2xl"
                           >
                             {item.label}
-                            <ArrowUpRight className="h-5 w-5 text-muted-foreground" />
                           </Link>
                         ))}
                       </nav>
                       <Link
                         to="/contact"
-                        onClick={() => setOpen(false)}
+                        onClick={closeMobileMenu}
                         className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-4 text-sm font-medium"
                       >
                         Book appointment
-                        <ArrowUpRight className="h-4 w-4" />
                       </Link>
                     </div>
                   </SheetContent>
