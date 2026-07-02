@@ -36,7 +36,7 @@ export function ContelLogo() {
     <img
       src={contelLogo}
       alt="Contell Africa Ltd"
-      className="-ml-4 block h-16 w-44 origin-left scale-105 object-contain sm:h-20 sm:w-56 sm:scale-110 lg:-ml-9 lg:h-24 lg:w-64 lg:scale-125 lg:brightness-110 lg:saturate-110 xl:h-28 xl:w-72 xl:scale-[1.3]"
+      className="-ml-4 block h-16 w-44 origin-left scale-110 object-contain sm:h-20 sm:w-56 sm:scale-[1.15] lg:-ml-9 lg:h-24 lg:w-64 lg:scale-125 lg:brightness-110 lg:saturate-110 xl:h-28 xl:w-72 xl:scale-[1.3]"
     />
   );
 }

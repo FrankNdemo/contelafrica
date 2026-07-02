@@ -127,18 +127,18 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-[#f7f0e8] px-5 pb-12 pt-16 text-[#101418] lg:px-10 md:pb-16 md:pt-20">
+      <section className="overflow-hidden bg-[#f7f0e8] px-5 pb-12 pt-16 text-[#101418] lg:px-10 md:pb-16 md:pt-20">
         <div className="mx-auto max-w-[1280px]">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-end">
-            <Reveal>
+            <Reveal className="min-w-0">
               <span className="text-xs font-semibold tracking-[0.22em] text-[#ff4b00] uppercase">
                 Our achievement
               </span>
-              <h2 className="mt-4 max-w-md text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
+              <h2 className="mt-4 max-w-full text-balance text-[clamp(1.75rem,8vw,2.25rem)] font-semibold leading-tight tracking-tight md:max-w-md md:text-4xl">
                 Our Kenyan success story, built across Africa.
               </h2>
             </Reveal>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid min-w-0 grid-cols-1 gap-6 min-[420px]:grid-cols-3 min-[420px]:gap-4 sm:gap-5">
               {STATS.slice(0, 3).map((stat, index) => (
                 <Reveal key={stat.label} delay={index * 0.06}>
                   <div className="border-l border-[#101418]/15 pl-4">
@@ -274,7 +274,7 @@ function About() {
                 <article className="group relative pb-8">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] bg-white">
                     <img
-                      src={TEAM_IMAGES[index]}
+                      src={person.image ?? TEAM_IMAGES[index]}
                       alt={person.name}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"

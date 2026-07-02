@@ -618,28 +618,26 @@ function ProcessRibbon() {
                 return (
                   <article
                     key={p.step}
-                    className="group relative flex h-[clamp(300px,52vh,360px)] w-[260px] shrink-0 flex-col overflow-hidden rounded-[4px] border border-[#ff4b00] bg-[#ff4b00] p-6 shadow-[0_12px_28px_rgba(16,20,24,0.12)]"
+                    className="group relative flex h-[clamp(300px,52vh,360px)] w-[260px] shrink-0 flex-col overflow-hidden rounded-[8px] border border-white/10 bg-[#5cc7bd]/72 p-6 text-white shadow-xl shadow-black/15 backdrop-blur-sm transition-transform hover:-translate-y-1 hover:bg-[#5cc7bd]/82"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-display text-2xl text-[#071b38]">{p.step}.</span>
+                      <span className="font-display text-2xl text-white">{p.step}.</span>
                       <span
                         className="relative grid h-14 w-14 place-items-center"
                         aria-hidden="true"
                       >
-                        <span className="absolute inset-1 rotate-6 border border-[#071b38]/20" />
+                        <span className="absolute inset-1 rotate-6 border border-white/25" />
                         <Icon
-                          className="relative h-10 w-10 text-[#26384a] transition-transform duration-300 group-hover:scale-105"
-                          strokeWidth={1.25}
+                          className="relative h-10 w-10 text-white transition-transform duration-300 group-hover:scale-110"
+                          strokeWidth={2.2}
                         />
-                        <span className="absolute bottom-1 right-1 h-5 w-2 bg-[#071b38]/75" />
+                        <span className="absolute bottom-1 right-1 h-5 w-2 bg-white/80" />
                       </span>
                     </div>
 
-                    <h3 className="font-display mt-7 text-xl font-medium text-[#13243a]">
-                      {p.title}
-                    </h3>
-                    <span className="mt-3 h-px w-7 bg-[#071b38]" aria-hidden="true" />
-                    <p className="mt-3 text-xs leading-5 text-[#42505d]">{p.body}</p>
+                    <h3 className="font-display mt-7 text-xl font-medium text-white">{p.title}</h3>
+                    <span className="mt-3 h-px w-7 bg-white/70" aria-hidden="true" />
+                    <p className="mt-3 text-xs leading-5 text-white/82">{p.body}</p>
                   </article>
                 );
               })}

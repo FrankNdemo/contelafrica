@@ -900,13 +900,21 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export type LeadershipMember = { name: string; role: string; bio: string; phone?: string };
+export type LeadershipMember = {
+  name: string;
+  role: string;
+  bio: string;
+  phone?: string;
+  image?: string;
+};
 export const LEADERSHIP: LeadershipMember[] = [
   {
     name: "Chadwick Otachi",
     role: "Operations Director",
     bio: "Operations leader focused on disciplined delivery, dependable programmes and consistent project quality.",
     phone: "0722492285",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85",
   },
   {
     name: "Dr. Adaeze Okonkwo",
